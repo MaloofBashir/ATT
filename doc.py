@@ -1,8 +1,7 @@
 import PyPDF2
 import openpyxl
 
-rollno=""
-subjects=""
+
 all_roll_nos=[]
 def get_roll_no(pdf_obj,page_no):
       page1=pdf_obj.pages[page_no].extract_text()
