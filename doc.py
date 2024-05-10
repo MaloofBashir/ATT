@@ -1,6 +1,9 @@
 import PyPDF2
 import openpyxl
+import sys
 
+args=sys.argv
+sub_name=args[1]
 
 all_roll_nos=[]
 def get_roll_no(pdf_obj,page_no):
@@ -31,7 +34,7 @@ ws=wb.active
 with open('ZP.pdf','rb') as pdffile:
     pdf_obj=PyPDF2.PdfReader(pdffile)
     num_pages=len(pdf_obj.pages)
-    sub_to_search="IESD620"
+    sub_to_search=sub_name
     ws.append([sub_to_search])
     for pageno in range(num_pages):
           subs_of_current_candidate=get_subname(pdf_obj,pageno)
